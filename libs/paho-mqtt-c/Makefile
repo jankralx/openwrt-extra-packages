@@ -50,17 +50,17 @@ define Package/libpaho-mqtt-c/description
 	$(call Package/paho-mqtt-c/Default/description)
 endef
 
-define Package/paho-mqtt-c-cli
-	$(call Package/paho-mqtt-c/Default)
-  SECTION:=utils
-  CATEGORY:=Utilities
-  DEPENDS:=+libpaho-mqtt-c
-	TITLE+= (cli)
-endef
+# define Package/paho-mqtt-c-cli
+# 	$(call Package/paho-mqtt-c/Default)
+#   SECTION:=utils
+#   CATEGORY:=Utilities
+#   DEPENDS:=+libpaho-mqtt-c
+# 	TITLE+= (cli)
+# endef
 
-define Package/paho-mqtt-c-cli/description
-	$(call Package/paho.mqtt.c/Default/description)
-endef
+# define Package/paho-mqtt-c-cli/description
+# 	$(call Package/paho.mqtt.c/Default/description)
+# endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
@@ -74,10 +74,10 @@ define Package/libpaho-mqtt-c/install
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libpaho-mqtt3*.so* $(1)/usr/lib/	
 endef
 
-define Package/paho-mqtt-c-cli/install
-	$(INSTALL_DIR) $(1)/usr/bin
-	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/	
-endef
+# define Package/paho-mqtt-c-cli/install
+# 	$(INSTALL_DIR) $(1)/usr/bin
+# 	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/	
+# endef
 
 $(eval $(call BuildPackage,libpaho-mqtt-c))
-$(eval $(call BuildPackage,paho-mqtt-c-cli))
+#$(eval $(call BuildPackage,paho-mqtt-c-cli))
