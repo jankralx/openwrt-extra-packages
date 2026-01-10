@@ -50,6 +50,17 @@ define Package/libpaho-mqtt-c/description
 	$(call Package/paho-mqtt-c/Default/description)
 endef
 
+# Copy from extracted paho.mqtt.c-$(PKG_VERSION) to expected $(PKG_BUILD_DIR)
+define Build/Prepare
+	$(call Build/Prepare/Default)
+	if [ -d "$(BUILD_DIR)/paho.mqtt.c-$(PKG_VERSION)" ] && [ "$(BUILD_DIR)/paho.mqtt.c-$(PKG_VERSION)" != "$(PKG_BUILD_DIR)" ]; then \
+		rm -rf $(PKG_BUILD_DIR); \
+		$(CP) $(BUILD_DIR)/paho.mqtt.c-$(PKG_VERSION) $(PKG_BUILD_DIR); \
+		rm -rf $(BUILD_DIR)/paho.mqtt.c-$(PKG_VERSION); \
+	fi
+endef
+
+
 # define Package/paho-mqtt-c-cli
 # 	$(call Package/paho-mqtt-c/Default)
 #   SECTION:=utils
