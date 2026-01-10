@@ -20,6 +20,7 @@ PKG_LICENSE_FILES:=COPYING
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
+PKG_USE_NINJA:=0
 
 PKG_MAINTAINER:=HaiBac Ngo <ngohaibac@gmail.com>
 
