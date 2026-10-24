@@ -1,3 +1,6 @@
+# Obsolete
+Moved to jankralx/hapcan-openwrt
+
 ## Description
 
 This is my OpenWrt "custom"-feed containing my build scripts, options and patches for applications, modules and libraries used for my router which are not available in the upstream OpenWrt package.
